@@ -3,11 +3,17 @@ server:
 
 spring:
   data:
-  mongodb:
-    host: localhost
-    port: 30001
-    username: admin 
-    password: admin123
+    mongodb:
+      host: localhost
+      port: 30001
+      username: admin 
+      password: admin123
+      uri: mongodb://admin:admin123@localhost:30001
+  cloud:
+    kubernetes:
+      secrets:
+        enabled: true
+        paths: /etc/mongo/config
 
 logging:
   pattern: 

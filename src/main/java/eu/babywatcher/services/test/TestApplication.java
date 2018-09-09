@@ -27,6 +27,11 @@ public class TestApplication {
 	TestRepository repository;
 	
 	public static void main(String[] args) {
+		String kubeSvcHost, kubeSvcPort;
+		if ((kubeSvcHost = System.getenv("KUBERNETES_SERVICE_HOST")) != null &&
+		(kubeSvcPort = System.getenv("KUBERNETES_SERVICE_PORT_HTTPS")) != null) {
+		System.setProperty("kubernetes.master", kubeSvcHost + ":" + kubeSvcPort);
+		}
 		SpringApplication.run(TestApplication.class, args);
 	}
 
