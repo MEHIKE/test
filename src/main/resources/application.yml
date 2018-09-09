@@ -2,6 +2,8 @@ server:
   port: 8090
 
 spring:
+  jpa:
+    generate-ddl: true 
   data:
     mongodb:
       host: localhost
@@ -9,6 +11,16 @@ spring:
       username: admin 
       password: admin123
       uri: mongodb://admin:admin123@localhost:30001
+      url: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_URL}:30001/${MONGODB_DB}
+      database: customers # Database name.
+      #uri: mongodb://34.228.190.228:27017 # Mongo database URI. Cannot be set with host, port and credentials. 
+  datasource:
+    host: localhost
+    port: 30001
+    username: admin 
+    password: admin123
+    uri: mongodb://admin:admin123@localhost:30001
+    url: mongodb://admin:admin123@localhost:30001/microservices
   cloud:
     kubernetes:
       secrets:
