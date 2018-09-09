@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import eu.babywatcher.services.test.model.Test;
 import eu.babywatcher.services.test.repository.TestRepository;
+import eu.babywatcher.services.test.repository.TestRepositoryImpl;
 //import eu.babywatcher.services.test.repository.EmployeeRepository;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -58,8 +59,8 @@ public class TestApplication {
 	}
 	
 	@Bean
-	TestRepository repository() {
-		TestRepository repository = new TestRepository();
+	TestRepositoryImpl repository() {
+		TestRepositoryImpl repository = new TestRepositoryImpl();
 		repository.add(new Test(1L, 1L, "John Smith", 34, "Analyst"));
 		repository.add(new Test(1L, 1L, "Darren Hamilton", 37, "Manager"));
 		repository.add(new Test(1L, 1L, "Tom Scott", 26, "Developer"));
