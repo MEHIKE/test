@@ -1,6 +1,14 @@
 server:
   port: 8090
 
+spring:
+  data:
+  mongodb:
+    host: localhost
+    port: 30001
+    username: admin 
+    password: admin123
+
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"

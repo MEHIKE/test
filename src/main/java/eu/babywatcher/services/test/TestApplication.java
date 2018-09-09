@@ -23,8 +23,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class TestApplication {
 
-//	@Autowired
-//	TestRepository repository;
+	@Autowired
+	TestRepository repository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(TestApplication.class, args);
