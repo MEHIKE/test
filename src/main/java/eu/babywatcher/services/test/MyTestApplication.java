@@ -77,7 +77,7 @@ public class MyTestApplication {
 		repository.add(new MyTest(2L, 3L, "Andrew Campton", 30, "Manager"));
 		repository.add(new MyTest(2L, 4L, "Steve Franklin", 25, "Developer"));
 		repository.add(new MyTest(2L, 4L, "Elisabeth Smith", 30, "Developer"));
-		LOGGER.debug("lisatud: 10tk");
+		LOGGER.info("lisatud: 10tk");
 		return repository;
 	}
 	
