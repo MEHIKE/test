@@ -1,5 +1,7 @@
 package eu.babywatcher.services.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 //import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import eu.babywatcher.services.test.controller.MyTestController;
 import eu.babywatcher.services.test.model.MyTest;
 import eu.babywatcher.services.test.repository.MyTestRepository;
 import eu.babywatcher.services.test.repository.MyTestRepositoryImpl;
@@ -27,6 +30,9 @@ public class MyTestApplication {
 
 	@Autowired
 	MyTestRepository repository;
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestApplication.class);
+
 	
 	public static void main(String[] args) {
 		String kubeSvcHost, kubeSvcPort;
@@ -65,12 +71,13 @@ public class MyTestApplication {
 		repository.add(new MyTest(1L, 1L, "Darren Hamilton", 37, "Manager"));
 		repository.add(new MyTest(1L, 1L, "Tom Scott", 26, "Developer"));
 		repository.add(new MyTest(1L, 2L, "Anna London", 39, "Analyst"));		
-		repository.add(new MyTest(1L, 2L, "Patrick Dempsey", 27, "Developer"));
+		repository.add(new MyTest(2L, 2L, "Patrick Dempsey", 27, "Developer"));
 		repository.add(new MyTest(2L, 3L, "Kevin Price", 38, "Developer"));		
 		repository.add(new MyTest(2L, 3L, "Ian Scott", 34, "Developer"));
 		repository.add(new MyTest(2L, 3L, "Andrew Campton", 30, "Manager"));
 		repository.add(new MyTest(2L, 4L, "Steve Franklin", 25, "Developer"));
 		repository.add(new MyTest(2L, 4L, "Elisabeth Smith", 30, "Developer"));
+		LOGGER.debug("lisatud: 10tk");
 		return repository;
 	}
 	

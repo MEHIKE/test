@@ -27,7 +27,9 @@ public class MyTestController {
 	@PostMapping("/")
 	public MyTest add(@RequestBody MyTest myTest) {
 		LOGGER.info("MyTest add: {}", myTest);
-		return repository.add(myTest);
+		MyTest test=repository.add(myTest);
+		LOGGER.info("lisatud: "+test);
+		return test;
 	}
 	
 	@GetMapping("/{id}")
@@ -45,6 +47,7 @@ public class MyTestController {
 	@GetMapping("/")
 	public List<MyTest> findAll() {
 		LOGGER.info("MyTest find");
+		LOGGER.info("kokku: "+repository.findAll().size());
 		return repository.findAll();
 	}
 	
