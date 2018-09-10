@@ -2,7 +2,7 @@ server:
   port: 8090
 
 spring:
-autoconfigure:
+  autoconfigure:
     exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
   jpa:
     generate-ddl: true 
@@ -15,7 +15,6 @@ autoconfigure:
       database: microservices
       uri: mongodb://admin:admin123@localhost:30001
       url: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@localhost:30001/${MONGODB_DB}
-      database: customers # Database name.
       #uri: mongodb://34.228.190.228:27017 # Mongo database URI. Cannot be set with host, port and credentials. 
   datasource:
     host: localhost
