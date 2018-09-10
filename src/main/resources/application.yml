@@ -2,6 +2,8 @@ server:
   port: 8090
 
 spring:
+autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
   jpa:
     generate-ddl: true 
   data:
@@ -10,6 +12,7 @@ spring:
       port: 30001
       username: admin 
       password: admin123
+      database: microservices
       uri: mongodb://admin:admin123@localhost:30001
       url: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@localhost:30001/${MONGODB_DB}
       database: customers # Database name.
