@@ -66,7 +66,7 @@ public class MyTestApplication {
 	
 	@Bean
 	MyTestRepositoryImpl repository() {
-		MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
+		//MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
 		repository.add(new MyTest(1L, 1L, "John Smith", 34, "Analyst"));
 		repository.add(new MyTest(1L, 1L, "Darren Hamilton", 37, "Manager"));
 		repository.add(new MyTest(1L, 1L, "Tom Scott", 26, "Developer"));
