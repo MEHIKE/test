@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Bean;
 //import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import eu.babywatcher.services.test.model.Test;
-import eu.babywatcher.services.test.repository.TestRepository;
-import eu.babywatcher.services.test.repository.TestRepositoryImpl;
+import eu.babywatcher.services.test.model.MyTest;
+import eu.babywatcher.services.test.repository.MyTestRepository;
+import eu.babywatcher.services.test.repository.MyTestRepositoryImpl;
 //import eu.babywatcher.services.test.repository.EmployeeRepository;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -23,10 +23,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableDiscoveryClient
 @EnableMongoRepositories
 @EnableSwagger2
-public class TestApplication {
+public class MyTestApplication {
 
 	@Autowired
-	TestRepository repository;
+	MyTestRepository repository;
 	
 	public static void main(String[] args) {
 		String kubeSvcHost, kubeSvcPort;
@@ -34,7 +34,7 @@ public class TestApplication {
 		(kubeSvcPort = System.getenv("KUBERNETES_SERVICE_PORT_HTTPS")) != null) {
 		System.setProperty("kubernetes.master", kubeSvcHost + ":" + kubeSvcPort);
 		}
-		SpringApplication.run(TestApplication.class, args);
+		SpringApplication.run(MyTestApplication.class, args);
 	}
 
 /*	@Bean
@@ -44,7 +44,7 @@ public class TestApplication {
 					.apis(RequestHandlerSelectors.basePackage("eu.babywatcher.services.test.controller"))
 					.paths(PathSelectors.any())
 				.build()
-				.apiInfo(new ApiInfoBuilder().version("1.0").title("Test API").description("Documentation Test API v1.0").build());
+				.apiInfo(new ApiInfoBuilder().version("1.0").title("MyTest API").description("Documentation MyTest API v1.0").build());
 	}
 	*/
 
@@ -59,18 +59,18 @@ public class TestApplication {
 	}
 	
 	@Bean
-	TestRepositoryImpl repository() {
-		TestRepositoryImpl repository = new TestRepositoryImpl();
-		repository.add(new Test(1L, 1L, "John Smith", 34, "Analyst"));
-		repository.add(new Test(1L, 1L, "Darren Hamilton", 37, "Manager"));
-		repository.add(new Test(1L, 1L, "Tom Scott", 26, "Developer"));
-		repository.add(new Test(1L, 2L, "Anna London", 39, "Analyst"));		
-		repository.add(new Test(1L, 2L, "Patrick Dempsey", 27, "Developer"));
-		repository.add(new Test(2L, 3L, "Kevin Price", 38, "Developer"));		
-		repository.add(new Test(2L, 3L, "Ian Scott", 34, "Developer"));
-		repository.add(new Test(2L, 3L, "Andrew Campton", 30, "Manager"));
-		repository.add(new Test(2L, 4L, "Steve Franklin", 25, "Developer"));
-		repository.add(new Test(2L, 4L, "Elisabeth Smith", 30, "Developer"));
+	MyTestRepositoryImpl repository() {
+		MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
+		repository.add(new MyTest(1L, 1L, "John Smith", 34, "Analyst"));
+		repository.add(new MyTest(1L, 1L, "Darren Hamilton", 37, "Manager"));
+		repository.add(new MyTest(1L, 1L, "Tom Scott", 26, "Developer"));
+		repository.add(new MyTest(1L, 2L, "Anna London", 39, "Analyst"));		
+		repository.add(new MyTest(1L, 2L, "Patrick Dempsey", 27, "Developer"));
+		repository.add(new MyTest(2L, 3L, "Kevin Price", 38, "Developer"));		
+		repository.add(new MyTest(2L, 3L, "Ian Scott", 34, "Developer"));
+		repository.add(new MyTest(2L, 3L, "Andrew Campton", 30, "Manager"));
+		repository.add(new MyTest(2L, 4L, "Steve Franklin", 25, "Developer"));
+		repository.add(new MyTest(2L, 4L, "Elisabeth Smith", 30, "Developer"));
 		return repository;
 	}
 	

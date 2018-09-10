@@ -1,6 +1,6 @@
 package eu.babywatcher.services.test.model;
 
-public class Test {
+public class MyTest {
 
 	private Long id;
 	private Long organizationId;
@@ -9,11 +9,11 @@ public class Test {
 	private int age;
 	private String position;
 
-	public Test() {
+	public MyTest() {
 
 	}
 	
-	public Test(Long organizationId, Long departmentId, String name, int age, String position) {
+	public MyTest(Long organizationId, Long departmentId, String name, int age, String position) {
 		this.organizationId = organizationId;
 		this.departmentId = departmentId;
 		this.name = name;

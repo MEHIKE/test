@@ -10,20 +10,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import eu.babywatcher.services.test.model.Test;
+import eu.babywatcher.services.test.model.MyTest;
 
-public class TestRepositoryImpl implements TestRepository{
+public class MyTestRepositoryImpl implements MyTestRepository{
 
-	private List<Test> employees = new ArrayList<>();
+	private List<MyTest> employees = new ArrayList<>();
 	
-	public Test add(Test employee) {
+	public MyTest add(MyTest employee) {
 		employee.setId((long) (employees.size()+1));
 		employees.add(employee);
 		return employee;
 	}
 	
-	public Test findById(Long id) {
-		Optional<Test> employee = employees.stream().filter(a -> a.getId().equals(id)).findFirst();
+	public MyTest findById(Long id) {
+		Optional<MyTest> employee = employees.stream().filter(a -> a.getId().equals(id)).findFirst();
 		if (employee.isPresent())
 			return employee.get();
 		else
@@ -31,67 +31,67 @@ public class TestRepositoryImpl implements TestRepository{
 	}
 	
 	public boolean deleteById(Long id) {
-		Optional<Test> employee = employees.stream().filter(a -> a.getId().equals(id)).findFirst();
+		Optional<MyTest> employee = employees.stream().filter(a -> a.getId().equals(id)).findFirst();
 		if (employee.isPresent())
 			return employees.remove(employee.get());
 		else
 			return false;
 	}
 	
-	public List<Test> findAll() {
+	public List<MyTest> findAll() {
 		return employees;
 	}
 
 	@Override
-	public <S extends Test> List<S> saveAll(Iterable<S> entites) {
+	public <S extends MyTest> List<S> saveAll(Iterable<S> entites) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Test> findAll(Sort sort) {
+	public List<MyTest> findAll(Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Test> S insert(S entity) {
+	public <S extends MyTest> S insert(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Test> List<S> insert(Iterable<S> entities) {
+	public <S extends MyTest> List<S> insert(Iterable<S> entities) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Test> List<S> findAll(Example<S> example) {
+	public <S extends MyTest> List<S> findAll(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Test> List<S> findAll(Example<S> example, Sort sort) {
+	public <S extends MyTest> List<S> findAll(Example<S> example, Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Page<Test> findAll(Pageable pageable) {
+	public Page<MyTest> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Test> S save(S entity) {
+	public <S extends MyTest> S save(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Optional<Test> findById(String id) {
+	public Optional<MyTest> findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -103,7 +103,7 @@ public class TestRepositoryImpl implements TestRepository{
 	}
 
 	@Override
-	public Iterable<Test> findAllById(Iterable<String> ids) {
+	public Iterable<MyTest> findAllById(Iterable<String> ids) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -121,13 +121,13 @@ public class TestRepositoryImpl implements TestRepository{
 	}
 
 	@Override
-	public void delete(Test entity) {
+	public void delete(MyTest entity) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteAll(Iterable<? extends Test> entities) {
+	public void deleteAll(Iterable<? extends MyTest> entities) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -139,34 +139,34 @@ public class TestRepositoryImpl implements TestRepository{
 	}
 
 	@Override
-	public <S extends Test> Optional<S> findOne(Example<S> example) {
+	public <S extends MyTest> Optional<S> findOne(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Test> Page<S> findAll(Example<S> example, Pageable pageable) {
+	public <S extends MyTest> Page<S> findAll(Example<S> example, Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Test> long count(Example<S> example) {
+	public <S extends MyTest> long count(Example<S> example) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public <S extends Test> boolean exists(Example<S> example) {
+	public <S extends MyTest> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 	
-	/*public List<Test> findByDepartment(Long departmentId) {
+	/*public List<MyTest> findByDepartment(Long departmentId) {
 		return employees.stream().filter(a -> a.getDepartmentId().equals(departmentId)).collect(Collectors.toList());
 	}
 	
-	public List<Test> findByOrganization(Long organizationId) {
+	public List<MyTest> findByOrganization(Long organizationId) {
 		return employees.stream().filter(a -> a.getOrganizationId().equals(organizationId)).collect(Collectors.toList());
 	}*/
 	

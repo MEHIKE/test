@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import eu.babywatcher.services.test.model.Test;
-import eu.babywatcher.services.test.repository.TestRepository;
+import eu.babywatcher.services.test.model.MyTest;
+import eu.babywatcher.services.test.repository.MyTestRepository;
 
 @RestController
 public class MyTestController {
@@ -20,29 +20,29 @@ public class MyTestController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestController.class);
 	
 	@Autowired
-	TestRepository repository;
+	MyTestRepository repository;
 	
 	@PostMapping("/")
-	public Test add(@RequestBody Test test) {
-		LOGGER.info("Test add: {}", test);
-		return repository.add(test);
+	public MyTest add(@RequestBody MyTest myTest) {
+		LOGGER.info("MyTest add: {}", myTest);
+		return repository.add(myTest);
 	}
 	
 	@GetMapping("/{id}")
-	public Test findById(@PathVariable("id") Long id) {
-		LOGGER.info("Test find: id={}", id);
+	public MyTest findById(@PathVariable("id") Long id) {
+		LOGGER.info("MyTest find: id={}", id);
 		return repository.findById(id);
 	}
 
 	@GetMapping("/{id}")
 	public boolean deleteById(@PathVariable("id") Long id) {
-		LOGGER.info("Test find: id={}", id);
+		LOGGER.info("MyTest find: id={}", id);
 		return repository.deleteById(id);
 	}
 
 	@GetMapping("/")
-	public List<Test> findAll() {
-		LOGGER.info("Test find");
+	public List<MyTest> findAll() {
+		LOGGER.info("MyTest find");
 		return repository.findAll();
 	}
 	
