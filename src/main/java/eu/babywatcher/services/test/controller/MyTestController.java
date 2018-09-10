@@ -15,9 +15,9 @@ import eu.babywatcher.services.test.model.Test;
 import eu.babywatcher.services.test.repository.TestRepository;
 
 @RestController
-public class TestController {
+public class MyTestController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestController.class);
 	
 	@Autowired
 	TestRepository repository;
