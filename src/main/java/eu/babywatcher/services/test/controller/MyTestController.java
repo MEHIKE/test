@@ -36,7 +36,7 @@ public class MyTestController {
 		return repository.findById(id);
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/del/{id}")
 	public boolean deleteById(@PathVariable("id") Long id) {
 		LOGGER.info("MyTest find: id={}", id);
 		return repository.deleteById(id);
