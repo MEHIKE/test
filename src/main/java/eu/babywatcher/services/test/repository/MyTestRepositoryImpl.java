@@ -12,7 +12,7 @@ import org.springframework.data.domain.Sort;
 
 import eu.babywatcher.services.test.model.MyTest;
 
-public class MyTestRepositoryImpl implements MyTestRepository{
+public class MyTestRepositoryImpl {
 
 	private List<MyTest> employees = new ArrayList<>();
 	
