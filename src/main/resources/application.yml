@@ -6,6 +6,7 @@ spring:
     exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
   jpa:
     generate-ddl: true 
+    database: default
   data:
     mongodb:
       host: localhost
@@ -28,6 +29,23 @@ spring:
       secrets:
         enabled: true
         paths: /etc/mongo/config
+
+# PostgreSQL DB - "postgres"
+postgres:
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public 
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+# PostgreSQL DB - "postgres2"
+postgres2:
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES2_PORT}/${POSTGRES2_DB}?currentSchema=public 
+    username: ${POSTGRES2_USER}
+    password: ${POSTGRES2_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
 
 logging:
   pattern: 

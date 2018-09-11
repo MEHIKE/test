@@ -1,6 +1,7 @@
 package eu.babywatcher.services.test.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,51 +13,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import eu.babywatcher.services.test.model.repo.MyTestRepository;
-import eu.babywatcher.services.test.mongo.domain.MyTest;
+import eu.babywatcher.services.test.postgres.domain.TestPostgres;
 import eu.babywatcher.services.test.postgres.repo.PostgresRepository;
-import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
 
 @RestController
-@RequestMapping("/test")
-public class MyTestController {
+@RequestMapping("/pos")
+public class PostgresController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(PostgresController.class);
 	
-	@Autowired
-	MyTestRepository repository;
 
 	@Autowired
 	PostgresRepository posrepository;
 
-	@Autowired
-	Postgres2Repository pos2repository;
-
 	@PostMapping("/")
-	public MyTest add(@RequestBody MyTest myTest) {
-		LOGGER.info("MyTest add: {}", myTest);
-		MyTest test=repository.add(myTest);
+	public TestPostgres add(@RequestBody TestPostgres myTest) {
+		LOGGER.info("Postgres add: {}", myTest);
+		TestPostgres test=posrepository.add(myTest);
 		LOGGER.info("lisatud: "+test);
 		return test;
 	}
 	
 	@GetMapping("/{id}")
-	public MyTest findById(@PathVariable("id") Long id) {
-		LOGGER.info("MyTest find: id={}", id);
-		return repository.findById(id);
+	public Optional<TestPostgres> findById(@PathVariable("id") Long id) {
+		LOGGER.info("Postgres find: id={}", id);
+		return posrepository.findById(id);
 	}
 
-	@GetMapping("/del/{id}")
+/*	@GetMapping("/del/{id}")
 	public boolean deleteById(@PathVariable("id") Long id) {
-		LOGGER.info("MyTest find: id={}", id);
-		return repository.deleteById(id);
+		LOGGER.info("Postgres find: id={}", id);
+		return posrepository.deleteById(id);
 	}
-
+*/
 	@GetMapping("/")
-	public List<MyTest> findAll() {
-		LOGGER.info("MyTest find");
-		LOGGER.info("kokku: "+repository.findAll().size());
-		return repository.findAll();
+	public List<TestPostgres> findAll() {
+		LOGGER.info("Postgres find");
+		LOGGER.info("kokku: "+posrepository.findAll().size());
+		return posrepository.findAll();
 	}
 	
 	/*@GetMapping("/department/{departmentId}")

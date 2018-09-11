@@ -1,4 +1,4 @@
-package eu.babywatcher.services.test.model;
+package eu.babywatcher.services.test.mongo.domain;
 
 public class MyTest {
 
