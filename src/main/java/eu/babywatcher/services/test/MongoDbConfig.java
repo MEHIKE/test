@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory",
+@EnableJpaRepositories(entityManagerFactoryRef = "mongoEntityManagerFactory",
     basePackages = {"eu.babywatcher.services.test.mongo.repo"})
 public class MongoDbConfig {
 
@@ -30,7 +30,7 @@ public class MongoDbConfig {
   }
 
   @Primary
-  @Bean(name = "entityManagerFactory")
+  @Bean(name = "mongoEntityManagerFactory")
   public LocalContainerEntityManagerFactoryBean entityManagerFactory(
       EntityManagerFactoryBuilder builder, @Qualifier("dataSource") DataSource dataSource) {
     return builder.dataSource(dataSource).packages("eu.babywatcher.services.test.mongo.domain").persistenceUnit("mongo")
@@ -38,9 +38,9 @@ public class MongoDbConfig {
   }
 
   @Primary
-  @Bean(name = "transactionManager")
+  @Bean(name = "mongoTransactionManager")
   public PlatformTransactionManager transactionManager(
-      @Qualifier("entityManagerFactory") EntityManagerFactory entityManagerFactory) {
-    return new JpaTransactionManager(entityManagerFactory);
+      @Qualifier("mongoEntityManagerFactory") EntityManagerFactory mongoEntityManagerFactory) {
+    return new JpaTransactionManager(mongoEntityManagerFactory);
   }
 } 

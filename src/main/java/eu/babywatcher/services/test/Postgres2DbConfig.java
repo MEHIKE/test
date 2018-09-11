@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory",
+@EnableJpaRepositories(entityManagerFactoryRef = "pos2EntityManagerFactory",
     basePackages = {"eu.babywatcher.services.test.postgres2.repo"})
 public class Postgres2DbConfig {
 
@@ -30,17 +30,17 @@ public class Postgres2DbConfig {
   }
 
   @Primary
-  @Bean(name = "entityManagerFactory")
-  public LocalContainerEntityManagerFactoryBean entityManagerFactory(
-      EntityManagerFactoryBuilder builder, @Qualifier("dataSource") DataSource dataSource) {
+  @Bean(name = "pos2EntityManagerFactory")
+  public LocalContainerEntityManagerFactoryBean pos2EntityManagerFactory(
+      EntityManagerFactoryBuilder builder, @Qualifier("postgres2") DataSource dataSource) {
     return builder.dataSource(dataSource).packages("eu.babywatcher.services.test.postgres2.domain").persistenceUnit("postgres2")
         .build();
   }
 
   @Primary
-  @Bean(name = "transactionManager")
-  public PlatformTransactionManager transactionManager(
-      @Qualifier("entityManagerFactory") EntityManagerFactory entityManagerFactory) {
-    return new JpaTransactionManager(entityManagerFactory);
+  @Bean(name = "pos2TransactionManager")
+  public PlatformTransactionManager pos2TransactionManager(
+      @Qualifier("pos2EntityManagerFactory") EntityManagerFactory pos2EntityManagerFactory) {
+    return new JpaTransactionManager(pos2EntityManagerFactory);
   }
 } 
