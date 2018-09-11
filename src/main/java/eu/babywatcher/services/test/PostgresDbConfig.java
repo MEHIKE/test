@@ -22,14 +22,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
     basePackages = {"eu.babywatcher.services.test.postgres.repo"})
 public class PostgresDbConfig {
 
-  @Primary
   @Bean(name = "postgres")
   @ConfigurationProperties(prefix = "postgres.datasource")
   public DataSource dataSource() {
     return DataSourceBuilder.create().build();
   }
 
-  @Primary
   @Bean(name = "posEntityManagerFactory")
   public LocalContainerEntityManagerFactoryBean posEntityManagerFactory(
       EntityManagerFactoryBuilder builder, @Qualifier("postgres") DataSource dataSource) {
@@ -37,7 +35,6 @@ public class PostgresDbConfig {
         .build();
   }
 
-  @Primary
   @Bean(name = "posTransactionManager")
   public PlatformTransactionManager posTransactionManager(
       @Qualifier("posEntityManagerFactory") EntityManagerFactory posEntityManagerFactory) {
