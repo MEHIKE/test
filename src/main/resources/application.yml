@@ -20,12 +20,12 @@ spring:
       url: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017/${MONGODB_DB}
       #uri: mongodb://34.228.190.228:27017 # Mongo database URI. Cannot be set with host, port and credentials. 
   datasource:
-    host: mongo
+    host: mongoservice
     port: 27017
     username: admin 
     password: admin123
-    uri: mongodb://admin:admin123:27017@mongo
-    url: mongodb://admin:admin123:27017@mongo/microservices
+    uri: mongodb://admin:admin123:27017@mongoservice
+    url: mongodb://admin:admin123:27017@mongoservice/microservices
   cloud:
     kubernetes:
       secrets:
