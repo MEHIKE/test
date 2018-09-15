@@ -11,13 +11,13 @@ spring:
     spring.jpa.database-platform: org.hibernate.dialect.PostgreSQL95Dialect
   data:
     mongodb:
-      host: mongo
+      host: mongoservice
       port: 27017
       username: admin 
       password: admin123
       database: microservices
-      uri: mongodb://admin:admin123@mongo:27017
-      url: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017/${MONGODB_DB}
+      uri: mongodb://admin:admin123@mongoservice:27017
+      url: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongoservice:27017/${MONGODB_DB}
       #uri: mongodb://34.228.190.228:27017 # Mongo database URI. Cannot be set with host, port and credentials. 
   datasource:
     host: mongoservice
