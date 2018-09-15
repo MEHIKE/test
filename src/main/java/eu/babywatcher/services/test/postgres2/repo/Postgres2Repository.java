@@ -10,11 +10,11 @@ import eu.babywatcher.services.test.postgres2.domain.TestPostgres2;
 
 
 
-@Repository
-public interface Postgres2Repository extends JpaRepository<TestPostgres2, Long> {
+//@Repository
+public interface Postgres2Repository {//extends JpaRepository<TestPostgres2, Long> {
 
-  TestPostgres2 add(TestPostgres2 testPostgres2);
+/*  TestPostgres2 add(TestPostgres2 testPostgres2);
   List<TestPostgres2> findAll();
   Optional<TestPostgres2> findById(Long id);
-
+*/
 } 

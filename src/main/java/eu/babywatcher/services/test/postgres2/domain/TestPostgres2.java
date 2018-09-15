@@ -8,11 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "postgres2")
+//@Entity
+//@Table(name = "postgres2")
 public class TestPostgres2 {
 
-	  @Id
+/*	  @Id
 	  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="bar_id_seq")
 	  @SequenceGenerator(name="bar_id_seq", sequenceName="bar_id_seq", allocationSize=1)
 	  @Column(name = "ID")
@@ -31,5 +31,6 @@ public class TestPostgres2 {
 
 	  public String getPostgres2() {
 	    return postgres2;
-	  } 
+	  }
+	  */ 
 }

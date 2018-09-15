@@ -25,17 +25,17 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.google.common.base.Preconditions;
 
-@Configuration
+/*@Configuration
 @EnableTransactionManagement
 @PropertySource({ "classpath:database.properties" })
 @EnableJpaRepositories(
 		basePackages = "eu.babywatcher.services.test.postgres2.repo", 
 		entityManagerFactoryRef = "postgres2EntityManager", 
 		transactionManagerRef = "postgres2TransactionManager"
-)
+)*/
 public class Postgres2DbConfig {
 	
-	@Autowired
+/*	@Autowired
 	private Environment env;
 
     public Postgres2DbConfig() {
@@ -76,5 +76,6 @@ public class Postgres2DbConfig {
         final JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(postgres2EntityManager().getObject());
         return transactionManager;
-    } 
+    }
+    */ 
 } 

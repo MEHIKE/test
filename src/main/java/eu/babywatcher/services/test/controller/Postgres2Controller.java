@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import eu.babywatcher.services.test.postgres2.domain.TestPostgres2;
 import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
 
-@RestController
-@RequestMapping("/pos2")
+//@RestController
+//@RequestMapping("/pos2")
 public class Postgres2Controller {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(Postgres2Controller.class);
+/*	private static final Logger LOGGER = LoggerFactory.getLogger(Postgres2Controller.class);
 	
 
 	@Autowired
@@ -39,30 +39,19 @@ public class Postgres2Controller {
 		LOGGER.info("Postgres2 find: id={}", id);
 		return pos2repository.findById(id);
 	}
-
+*/
 /*	@GetMapping("/del/{id}")
 	public boolean deleteById(@PathVariable("id") Long id) {
 		LOGGER.info("Postgres find: id={}", id);
 		return posrepository.deleteById(id);
 	}
 */
-	@GetMapping("/")
+/*	@GetMapping("/")
 	public List<TestPostgres2> findAll() {
 		LOGGER.info("Postgres2 find");
 		LOGGER.info("kokku: "+pos2repository.findAll().size());
 		return pos2repository.findAll();
 	}
 	
-	/*@GetMapping("/department/{departmentId}")
-	public List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId) {
-		LOGGER.info("Employee find: departmentId={}", departmentId);
-		return repository.findByDepartment(departmentId);
-	}*/
-	
-	/*@GetMapping("/organization/{organizationId}")
-	public List<Employee> findByOrganization(@PathVariable("organizationId") Long organizationId) {
-		LOGGER.info("Employee find: organizationId={}", organizationId);
-		return repository.findByOrganization(organizationId);
-	}*/
-	
+	*/
 }
