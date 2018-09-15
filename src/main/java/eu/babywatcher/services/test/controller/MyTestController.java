@@ -17,20 +17,20 @@ import eu.babywatcher.services.test.mongo.domain.MyTest;
 import eu.babywatcher.services.test.postgres.repo.PostgresRepository;
 import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
 
-@RestController
-@RequestMapping("/test")
+//@RestController
+//@RequestMapping("/test")
 public class MyTestController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestController.class);
+/*	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestController.class);
 	
-	@Autowired
-	MyTestRepository repository;
+//	@Autowired
+//	MyTestRepository repository;
 
 	@Autowired
 	PostgresRepository posrepository;
 
-	@Autowired
-	Postgres2Repository pos2repository;
+//	@Autowired
+//	Postgres2Repository pos2repository;
 
 	@PostMapping("/")
 	public MyTest add(@RequestBody MyTest myTest) {
@@ -59,16 +59,5 @@ public class MyTestController {
 		return repository.findAll();
 	}
 	
-	/*@GetMapping("/department/{departmentId}")
-	public List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId) {
-		LOGGER.info("Employee find: departmentId={}", departmentId);
-		return repository.findByDepartment(departmentId);
-	}*/
-	
-	/*@GetMapping("/organization/{organizationId}")
-	public List<Employee> findByOrganization(@PathVariable("organizationId") Long organizationId) {
-		LOGGER.info("Employee find: organizationId={}", organizationId);
-		return repository.findByOrganization(organizationId);
-	}*/
-	
+*/	
 }
