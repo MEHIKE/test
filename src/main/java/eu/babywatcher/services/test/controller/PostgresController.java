@@ -29,7 +29,7 @@ public class PostgresController {
 	@PostMapping("/")
 	public TestPostgres add(@RequestBody TestPostgres myTest) {
 		LOGGER.info("Postgres add: {}", myTest);
-		TestPostgres test=posrepository.add(myTest);
+		TestPostgres test=posrepository.save(myTest);
 		LOGGER.info("lisatud: "+test);
 		return test;
 	}
