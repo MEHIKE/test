@@ -35,7 +35,7 @@ spring:
 # PostgreSQL DB - "postgres"
 postgres:
   datasource:
-    url: jdbc:postgresql://localhost:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public 
+    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public 
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
@@ -43,9 +43,9 @@ postgres:
 # PostgreSQL DB - "postgres2"
 postgres2:
   datasource:
-    url: jdbc:postgresql://localhost:${POSTGRES2_PORT}/${POSTGRES2_DB}?currentSchema=public 
-    username: ${POSTGRES2_USER}
-    password: ${POSTGRES2_PASSWORD}
+    url: jdbc:postgresql://postgres2:${POSTGRES2_PORT}/${POSTGRES2_DB}?currentSchema=public 
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 //import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
@@ -29,6 +30,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class MyTestApplication {
 
+	  @Autowired
+	  Environment environment;
+
+/*	  
 	@Autowired
 	MyTestRepository repository;
 
@@ -37,7 +42,7 @@ public class MyTestApplication {
 
 	@Autowired
 	Postgres2Repository pos2repository;
-
+*/
 	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestApplication.class);
 
 	
@@ -71,7 +76,7 @@ public class MyTestApplication {
 				.apiInfo(new ApiInfoBuilder().version("1.0").title("Employee API").description("Documentation Employee API v1.0").build());
 	}
 	
-	@Bean
+/*	@Bean
 	MyTestRepository repository() {
 		//MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
 		repository.add(new MyTest(1L, 1L, "John Smith", 34, "Analyst"));
@@ -121,5 +126,5 @@ public class MyTestApplication {
 		LOGGER.info("lisatud: postgres2 10tk");
 		return pos2repository;
 	}
-
+*/
 }
