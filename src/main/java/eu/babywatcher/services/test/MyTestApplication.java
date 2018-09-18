@@ -8,10 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 //import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import eu.babywatcher.services.test.model.repo.MyTestRepository;
-import eu.babywatcher.services.test.mongo.domain.MyTest;
+//import eu.babywatcher.services.test.mongo.domain.MyTest;
 import eu.babywatcher.services.test.postgres.domain.TestPostgres;
 import eu.babywatcher.services.test.postgres.repo.PostgresRepository;
 import eu.babywatcher.services.test.postgres2.domain.TestPostgres2;

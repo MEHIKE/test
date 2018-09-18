@@ -86,10 +86,10 @@
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
+		</dependency-->
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -116,11 +116,11 @@
 	</dependency>
 
 <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
-<dependency>
+<!-- dependency>
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-core</artifactId>
     <version>3.6.2</version>
-</dependency>
+</dependency-->
 
 		<!-- dependency>
 			<groupId>org.springframework.boot</groupId>
