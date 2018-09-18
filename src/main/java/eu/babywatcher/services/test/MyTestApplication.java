@@ -95,16 +95,16 @@ public class MyTestApplication {
 	@Bean
 	PostgresRepository posrepository() {
 		//MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
-		posrepository.add(new TestPostgres("John Smith"));
-		posrepository.add(new TestPostgres("Darren Hamilton"));
-		posrepository.add(new TestPostgres("Tom Scott"));
-		posrepository.add(new TestPostgres("Anna London"));		
-		posrepository.add(new TestPostgres("Patrick Dempsey"));
-		posrepository.add(new TestPostgres("Kevin Price"));		
-		posrepository.add(new TestPostgres("Ian Scott"));
-		posrepository.add(new TestPostgres("Andrew Campton"));
-		posrepository.add(new TestPostgres("Steve Franklin"));
-		posrepository.add(new TestPostgres("Elisabeth Smith"));
+		posrepository.save(new TestPostgres("John Smith"));
+		posrepository.save(new TestPostgres("Darren Hamilton"));
+		posrepository.save(new TestPostgres("Tom Scott"));
+		posrepository.save(new TestPostgres("Anna London"));		
+		posrepository.save(new TestPostgres("Patrick Dempsey"));
+		posrepository.save(new TestPostgres("Kevin Price"));		
+		posrepository.save(new TestPostgres("Ian Scott"));
+		posrepository.save(new TestPostgres("Andrew Campton"));
+		posrepository.save(new TestPostgres("Steve Franklin"));
+		posrepository.save(new TestPostgres("Elisabeth Smith"));
 		LOGGER.info("lisatud: postgres 10tk");
 		return posrepository;
 	}
