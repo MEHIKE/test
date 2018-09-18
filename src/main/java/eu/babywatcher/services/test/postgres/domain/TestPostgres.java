@@ -7,17 +7,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "postgres")
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+@Entity(name = "Post")
+@Table(name = "uus")
+@EqualsAndHashCode
+@ToString
+@Data
 public class TestPostgres {
 
 	  @Id
-	  //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="bar_id_seq")
+	  @GeneratedValue(strategy = GenerationType.IDENTITY)//, generator="bar_id_seq")
 	  //@SequenceGenerator(name="bar_id_seq", sequenceName="bar_id_seq", allocationSize=1)
 	  @Column(name = "ID")
 	  private Long id;
 
+	  @NotNull
 	  @Column(name = "postgres")
 	  private String postgres;
 

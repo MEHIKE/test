@@ -36,11 +36,11 @@ public class MyTestApplication {
 /*	  
 	@Autowired
 	MyTestRepository repository;
-
+*/
 	@Autowired
 	PostgresRepository posrepository;
 
-	@Autowired
+/*	@Autowired
 	Postgres2Repository pos2repository;
 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(MyTestApplication.class);
@@ -92,7 +92,7 @@ public class MyTestApplication {
 		LOGGER.info("lisatud: mongo 10tk");
 		return repository;
 	}
-	
+*/	
 	@Bean
 	PostgresRepository posrepository() {
 		//MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
@@ -110,7 +110,7 @@ public class MyTestApplication {
 		return posrepository;
 	}
 
-	@Bean
+/*	@Bean
 	Postgres2Repository pos2repository() {
 		//MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
 		pos2repository.add(new TestPostgres2("John Smith"));

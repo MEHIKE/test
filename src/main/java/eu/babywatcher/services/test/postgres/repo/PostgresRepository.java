@@ -15,5 +15,6 @@ public interface PostgresRepository extends JpaRepository<TestPostgres, Long> {
   //public TestPostgres add(TestPostgres testPostgres);
   public List<TestPostgres> findAll();
   public Optional<TestPostgres> findById(Long id);
+  public void add(TestPostgres testPostgres);
 
 } 
