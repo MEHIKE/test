@@ -1,5 +1,7 @@
 package eu.babywatcher.services.test.postgres.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +26,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Data
-public class TestPostgres {
+public class TestPostgres implements Serializable  {
 
 	  @Id
 	  //@GeneratedValue(strategy = GenerationType.IDENTITY)//, generator="bar_id_seq")
