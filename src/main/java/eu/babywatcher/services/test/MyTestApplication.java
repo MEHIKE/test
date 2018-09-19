@@ -96,6 +96,7 @@ public class MyTestApplication {
 	PostgresRepository posrepository() {
 		//MyTestRepositoryImpl repository = new MyTestRepositoryImpl();
 		LOGGER.info(new TestPostgres("Test postgers").toString());
+		
 		posrepository.save(new TestPostgres("John Smith"));
 		posrepository.save(new TestPostgres("Darren Hamilton"));
 		posrepository.save(new TestPostgres("Tom Scott"));
