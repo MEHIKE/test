@@ -38,7 +38,7 @@ public class TestPostgres {
 	    // Default constructor needed by JPA
 	  }
 
-	  public String getPostgres() {
+	  /*public String getPostgres() {
 	    return postgres;
-	  } 
+	  } */
 }
