@@ -6,7 +6,8 @@ spring:
   #  exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
   h2.console.enabled: true
   jpa:
-    generate-ddl: true 
+    generate-ddl: true
+    show-sql: true 
     database: default
     properties.hibernate: 
       temp.use_jdbc_metadata_defaults: false
