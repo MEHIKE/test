@@ -9,10 +9,12 @@ spring:
     generate-ddl: true
     show-sql: true 
     database: default
-    properties.hibernate: 
-      temp.use_jdbc_metadata_defaults: false
-      generate_statistics: true
-    spring.jpa.database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    properties:
+      hibernate: 
+        temp.use_jdbc_metadata_defaults: false
+        generate_statistics: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
     hibernate:
       ddl-auto: create-drop
       ## Hibernate ddl auto (create, create-drop, validate, update)

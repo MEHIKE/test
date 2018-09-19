@@ -28,6 +28,8 @@ import lombok.ToString;
 @Data
 public class TestPostgres implements Serializable  {
 
+	private static final long serialVersionUID = 1L;
+	
 	  @Id
 	  //@GeneratedValue(strategy = GenerationType.IDENTITY)//, generator="bar_id_seq")
 	  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="bar_id_seq")
