@@ -12,9 +12,9 @@ import eu.babywatcher.services.test.postgres.domain.TestPostgres;
 @Repository
 public interface PostgresRepository extends JpaRepository<TestPostgres, Long> {
 
-  //public TestPostgres add(TestPostgres testPostgres);
+  public TestPostgres saveAndFlush(TestPostgres testPostgres);
   public List<TestPostgres> findAll();
   public Optional<TestPostgres> findById(Long id);
-  //public void add(TestPostgres testPostgres);
+  public void delete(TestPostgres testPostgres);
 
 } 

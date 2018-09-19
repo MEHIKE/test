@@ -4,11 +4,17 @@ server:
 spring:
   #autoconfigure:
   #  exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
+  h2.console.enabled: true
   jpa:
     generate-ddl: true 
     database: default
-    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+    properties.hibernate: 
+      temp.use_jdbc_metadata_defaults: false
+      generate_statistics: true
     spring.jpa.database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: create-drop
+      ## Hibernate ddl auto (create, create-drop, validate, update)
   #data:
     #mongodb:
     #  host: mongoservice
@@ -52,6 +58,12 @@ postgres2:
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
+        stat: true
 
 # Disable feature detection by this undocumented parameter. Check the org.hibernate.engine.jdbc.internal.JdbcServiceImpl.configure method for more details.
 #spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
