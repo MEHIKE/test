@@ -15,8 +15,8 @@ import eu.babywatcher.services.test.postgres.domain.TestPostgres;
 @Repository
 public interface PostgresRepository extends JpaRepository<TestPostgres, Long> {
 
-  @Autowired
-  public EntityManager em;
+  //@Autowired
+  //public EntityManager em;
 
   public TestPostgres saveAndFlush(TestPostgres testPostgres);
   public List<TestPostgres> findAll();
