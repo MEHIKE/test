@@ -26,14 +26,14 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Data
-public class TestPostgres implements Serializable  {
+public class TestPostgres { //implements Serializable  {
 
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	
 	  @Id
-	  //@GeneratedValue(strategy = GenerationType.IDENTITY)//, generator="bar_id_seq")
-	  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="bar_id_seq")
-	  @SequenceGenerator(name="bar_id_seq", sequenceName="bar_id_seq", allocationSize=1)
+	  @GeneratedValue(strategy = GenerationType.IDENTITY)//, generator="bar_id_seq")
+	  //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="bar_id_seq")
+	  //@SequenceGenerator(name="bar_id_seq", sequenceName="bar_id_seq", allocationSize=1)
 	  @Column(name = "ID")
 	  private Long id;
 
