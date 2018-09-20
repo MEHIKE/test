@@ -11,6 +11,7 @@ spring:
     database: default
     properties:
       hibernate: 
+        jdbc.lob.non_contextual_creation: true
         temp.use_jdbc_metadata_defaults: false
         generate_statistics: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
