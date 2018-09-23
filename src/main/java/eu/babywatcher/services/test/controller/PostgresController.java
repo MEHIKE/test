@@ -17,7 +17,7 @@ import eu.babywatcher.services.test.postgres.domain.TestPostgres;
 import eu.babywatcher.services.test.postgres.repo.PostgresRepository;
 
 @RestController
-@RequestMapping("/pos")
+//@RequestMapping("/pos")
 public class PostgresController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(PostgresController.class);
