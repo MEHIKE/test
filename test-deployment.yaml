@@ -36,6 +36,12 @@ spec:
               name: postgresdb
               key: database-password
         - name: POSTGRES_HOST
-          value: postgres
+          valueFrom:
+            configMapKeyRef:
+              name: postgresdb
+              key: database-host
         - name: POSTGRES_PORT
-          value: "5432"
+          valueFrom:
+            configMapKeyRef:
+              name: postgresdb
+              key: database-port
