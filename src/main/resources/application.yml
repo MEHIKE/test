@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: zuul-proxy
+    name: test
   #autoconfigure:
   #  exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
   h2.console.enabled: true
