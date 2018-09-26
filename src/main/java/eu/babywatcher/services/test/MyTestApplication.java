@@ -72,10 +72,10 @@ public class MyTestApplication {
 	public Docket swaggerPersonApi10() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-					.apis(RequestHandlerSelectors.basePackage("eu.babywatcher.services.test.controller"))
+					.apis(RequestHandlerSelectors.basePackage("eu.babywatcher.services.test"))
 					.paths(PathSelectors.any())
 				.build()
-				.apiInfo(new ApiInfoBuilder().version("1.0").title("Employee API").description("Documentation Employee API v1.0").build());
+				.apiInfo(new ApiInfoBuilder().version("1.0").title("Test API").description("Documentation Test API v1.0").build());
 	}
 	
 /*	@Bean
