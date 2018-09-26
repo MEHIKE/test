@@ -58,6 +58,18 @@ postgres2:
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
+eureka:
+  instance:
+    hostname: eureka
+    port: 8061
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      #defaultZone: ${EUREKA_URI}
+
 
 logging:
   pattern: 
