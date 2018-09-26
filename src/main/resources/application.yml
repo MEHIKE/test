@@ -2,6 +2,8 @@ server:
   port: 8090
 
 spring:
+  application:
+    name: zuul-proxy
   #autoconfigure:
   #  exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
   h2.console.enabled: true
