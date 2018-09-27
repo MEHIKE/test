@@ -34,7 +34,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableEurekaClient
 @EnableAutoConfiguration
 //@EnableMongoRepositories
-@EnableSwagger2
+//@EnableSwagger2
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
 public class MyTestApplication {
 
