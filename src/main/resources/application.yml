@@ -38,11 +38,11 @@ spring:
     #password: admin123
     #uri: mongodb://admin:admin123:27017@mongoservice
     #url: mongodb://admin:admin123:27017@mongoservice/microservices
-  cloud:
-    kubernetes:
-      secrets:
-        enabled: true
-        paths: /etc/mongo/config
+  #cloud:
+  #  kubernetes:
+  #    secrets:
+  #      enabled: true
+  #      paths: /etc/mongo/config
 
 # PostgreSQL DB - "postgres"
 postgres:
