@@ -12,6 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 //import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import eu.babywatcher.services.test.model.repo.MyTestRepository;
 //import eu.babywatcher.services.test.mongo.domain.MyTest;
