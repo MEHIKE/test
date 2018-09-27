@@ -74,7 +74,7 @@ public class MyTestApplication {
 	}
 	*/
 
-	@ApiImplicitParam(name = "num", value = "?????", required = true, dataType = "Long", paramType="path")
+	@ApiImplicitParam(name = "num", value = "1", required = true, dataType = "Long", paramType="path")
 	@Bean
 	public Docket swaggerPersonApi10() {
 		return new Docket(DocumentationType.SWAGGER_2)
