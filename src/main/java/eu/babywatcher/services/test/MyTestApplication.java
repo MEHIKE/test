@@ -30,8 +30,8 @@ import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
 public class MyTestApplication {
 
-	  @Autowired
-	  Environment environment;
+	  //@Autowired
+	  //Environment environment;
 
 /*	  
 	@Autowired
@@ -47,11 +47,11 @@ public class MyTestApplication {
 
 	
 	public static void main(String[] args) {
-		String kubeSvcHost, kubeSvcPort;
+		/*String kubeSvcHost, kubeSvcPort;
 		if ((kubeSvcHost = System.getenv("KUBERNETES_SERVICE_HOST")) != null &&
 		(kubeSvcPort = System.getenv("KUBERNETES_SERVICE_PORT_HTTPS")) != null) {
 		System.setProperty("kubernetes.master", kubeSvcHost + ":" + kubeSvcPort);
-		}
+		}*/
 		SpringApplication.run(MyTestApplication.class, args);
 	}
 
