@@ -90,7 +90,7 @@ public class MyTestApplication {
 		return new Docket(DocumentationType.SWAGGER_2) 
 				.select() 
 				//.apis(RequestHandlerSelectors.any())
-				.apis(RequestHandlerSelectors.basePackage("eu.babywatcher.services.test.controller"))
+				.apis(RequestHandlerSelectors.basePackage("eu.babywatcher.services"))
 					.paths(PathSelectors.any())
 					//.paths(PathSelectors.ant("/*"))
 					.build(); 
