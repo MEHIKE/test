@@ -19,6 +19,7 @@ import eu.babywatcher.services.test.postgres.domain.TestPostgres;
 import eu.babywatcher.services.test.postgres.repo.PostgresRepository;
 import eu.babywatcher.services.test.postgres2.domain.TestPostgres2;
 import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
+import io.swagger.annotations.ApiImplicitParam;
 //import eu.babywatcher.services.test.repository.EmployeeRepository;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -72,6 +73,7 @@ public class MyTestApplication {
 	}
 	*/
 
+	@ApiImplicitParam(name = "num", value = "?????", required = true, dataType = "Long", paramType="path")
 	@Bean
 	public Docket swaggerPersonApi10() {
 		return new Docket(DocumentationType.SWAGGER_2)
