@@ -89,8 +89,10 @@ public class MyTestApplication {
 	public Docket api() { 
 		return new Docket(DocumentationType.SWAGGER_2) 
 				.select() 
-				.apis(RequestHandlerSelectors.any()) 
-					.paths(PathSelectors.any()) 
+				//.apis(RequestHandlerSelectors.any())
+				.apis(RequestHandlerSelectors.basePackage("eu.babywatcher.services.test"))
+					//.paths(PathSelectors.any())
+					.paths(PathSelectors.ant("/*"))
 					.build(); 
 	}
 	
