@@ -24,7 +24,7 @@ import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
 @EnableDiscoveryClient
 @EnableFeignClients
 //@EnableEurekaClient
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 //@EnableMongoRepositories
 //@EnableSwagger2
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
