@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: test
+  #autoconfigure:
+  #  exclude: org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
   h2.console.enabled: true
   jpa:
     generate-ddl: true
@@ -18,6 +20,31 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQL95Dialect
     hibernate:
       ddl-auto: create-drop
+      ## Hibernate ddl auto (create, create-drop, validate, update)
+  #data:
+    #mongodb:
+    #  host: mongoservice
+    #  port: 27017
+    #  username: admin 
+    #  password: admin123
+    #  database: microservices
+    #  uri: mongodb://admin:admin123@mongoservice:27017
+    #  url: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongoservice:27017/${MONGODB_DB}
+    #  #uri: mongodb://34.228.190.228:27017 # Mongo database URI. Cannot be set with host, port and credentials. 
+  #datasource:
+    #host: mongoservice
+    #port: 27017
+    #username: admin 
+    #password: admin123
+    #uri: mongodb://admin:admin123:27017@mongoservice
+    #url: mongodb://admin:admin123:27017@mongoservice/microservices
+  #cloud:
+  #  kubernetes:
+  #    secrets:
+  #      enabled: true
+  #      paths: /etc/mongo/config
+
+# PostgreSQL DB - "postgres"
 postgres:
   datasource:
     url: jdbc:postgresql://postgres:${POSTGRES_SERVICE_PORT}/${POSTGRES_DB}?currentSchema=public 
@@ -25,6 +52,7 @@ postgres:
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
+# PostgreSQL DB - "postgres2"
 postgres2:
   datasource:
     url: jdbc:postgresql://postgres2:${POSTGRES2_PORT}/${POSTGRES2_DB}?currentSchema=public 
@@ -42,6 +70,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      #defaultZone: ${EUREKA_URI}
+
 
 logging:
   pattern: 
@@ -52,3 +82,10 @@ logging:
         SQL: DEBUG
         type: TRACE
         stat: true
+
+# Disable feature detection by this undocumented parameter. Check the org.hibernate.engine.jdbc.internal.JdbcServiceImpl.configure method for more details.
+#spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+
+# Because detection is disabled you have to set correct dialect by hand.
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect
+
