@@ -22,7 +22,7 @@ import eu.babywatcher.services.test.postgres2.domain.TestPostgres2;
 import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
 
 @EnableDiscoveryClient
-@EnableFeignClients
+//@EnableFeignClients
 //@EnableEurekaClient
 //@EnableAutoConfiguration
 //@EnableMongoRepositories
