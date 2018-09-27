@@ -74,8 +74,8 @@ public class MyTestApplication {
 	}
 	*/
 
-	@ApiImplicitParam(name = "num", value = "1", required = true, dataType = "Long", paramType="path")
-	@Bean
+	//@ApiImplicitParam(name = "num", value = "1", required = true, dataType = "Long", paramType="path")
+	/*@Bean
 	public Docket swaggerPersonApi10() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
@@ -83,6 +83,15 @@ public class MyTestApplication {
 					.paths(PathSelectors.any())
 				.build()
 				.apiInfo(new ApiInfoBuilder().version("1.0").title("Test API").description("Documentation Test API v1.0").build());
+	}*/
+	
+	@Bean
+	public Docket api() { 
+		return new Docket(DocumentationType.SWAGGER_2) 
+				.select() 
+				.apis(RequestHandlerSelectors.any()) 
+					.paths(PathSelectors.any()) 
+					.build(); 
 	}
 	
 /*	@Bean
