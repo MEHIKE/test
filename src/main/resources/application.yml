@@ -64,7 +64,7 @@ eureka:
   instance:
     hostname: eureka
     port: 8061
-    leaseRenewalIntervalInSeconds: 10
+    #leaseRenewalIntervalInSeconds: 10
   client:
     registerWithEureka: true
     fetchRegistry: true
