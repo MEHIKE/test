@@ -85,7 +85,7 @@ public class MyTestApplication {
 				.apiInfo(new ApiInfoBuilder().version("1.0").title("Test API").description("Documentation Test API v1.0").build());
 	}*/
 	
-	@Bean
+	/*@Bean
 	public Docket api() { 
 		return new Docket(DocumentationType.SWAGGER_2) 
 				.select() 
@@ -94,7 +94,7 @@ public class MyTestApplication {
 					.paths(PathSelectors.any())
 					//.paths(PathSelectors.ant("/*"))
 					.build(); 
-	}
+	}*/
 	
 /*	@Bean
 	MyTestRepository repository() {
