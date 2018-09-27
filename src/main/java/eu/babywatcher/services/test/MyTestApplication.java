@@ -20,14 +20,6 @@ import eu.babywatcher.services.test.postgres.domain.TestPostgres;
 import eu.babywatcher.services.test.postgres.repo.PostgresRepository;
 import eu.babywatcher.services.test.postgres2.domain.TestPostgres2;
 import eu.babywatcher.services.test.postgres2.repo.Postgres2Repository;
-import io.swagger.annotations.ApiImplicitParam;
-//import eu.babywatcher.services.test.repository.EmployeeRepository;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableDiscoveryClient
 @EnableFeignClients
