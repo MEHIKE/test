@@ -8,7 +8,7 @@ ENV TIME_ZONE Europe/Tallinn
 #    # Set timezone
 #    && echo "${TIME_ZONE}" > /etc/timezone \ 
 #	&& ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
-RUN echo "${TIME_ZONE}" > /etc/timezone 
+#RUN echo "${TIME_ZONE}" > /etc/timezone 
 #RUN ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime 
 EXPOSE 8090
 COPY target/$APP_FILE $APP_HOME/
